@@ -19,7 +19,7 @@ function getCss(theme: string, fontSize: string) {
     if (theme === 'dark') {
         background = '#2d46c1';
         foreground = 'white';
-        radial = 'dimgray';
+        radial = '#fefefe';
     }
     return `
     @font-face {
