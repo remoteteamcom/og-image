@@ -56,8 +56,8 @@ function getArray(stringOrArray: string[] | string | undefined): string[] {
 function getDefaultImages(images: string[], theme: Theme): string[] {
   const defaultImage =
     theme === "light"
-      ? "https://res.cloudinary.com/hebu10lmu/image/upload/c_scale,q_auto,h_110/v1597065935/www/forestry/remote-team-blue-logo_mhisgu.svg"
-      : "https://res.cloudinary.com/hebu10lmu/image/upload/c_scale,q_auto,w_110/v1597236265/www/logo-white-remoteteam_sky1mo.svg";
+      ? "https://res.cloudinary.com/hebu10lmu/image/upload/c_scale,q_auto,w_110/v1613983867/logo-dark-blue_ftitle.svg"
+      : "https://res.cloudinary.com/hebu10lmu/image/upload/c_scale,q_auto,w_110/v1613983867/logo-dark-blue_ftitle.svg";
 
   if (!images || !images[0]) {
     return [defaultImage];

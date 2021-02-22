@@ -7,14 +7,14 @@ const twOptions = { folder: "svg", ext: ".svg" };
 const emojify = (text: string) => twemoji.parse(text, twOptions);
 
 const rglr = readFileSync(
-  `${__dirname}/../_fonts/Inter-Regular.woff2`
+  `${__dirname}/../_fonts/nunito-sans-v6-latin/nunito-sans-v6-latin-regular.woff2`
 ).toString("base64");
-const bold = readFileSync(`${__dirname}/../_fonts/Inter-Bold.woff2`).toString(
-  "base64"
-);
-const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString(
-  "base64"
-);
+const bold = readFileSync(
+  `${__dirname}/../_fonts/nunito-sans-v6-latin/nunito-sans-v6-latin-800.woff2`
+).toString("base64");
+const mono = readFileSync(
+  `${__dirname}/../_fonts/nunito-sans-v6-latin/nunito-sans-v6-latin-700.woff2`
+).toString("base64");
 
 function getCss(theme: string, fontSize: string) {
   let background = "white";
@@ -22,35 +22,34 @@ function getCss(theme: string, fontSize: string) {
   let radial = "lightgray";
 
   if (theme === "dark") {
-    background = "#2d46c1";
-    foreground = "white";
+    background = "#D5EFDC";
+    foreground = "#1D3B51";
     radial = "#fefefe";
   }
   return `
     @font-face {
-        font-family: 'Inter';
+        font-family: 'Nunito Sans';
         font-style:  normal;
         font-weight: normal;
         src: url(data:font/woff2;charset=utf-8;base64,${rglr}) format('woff2');
     }
 
     @font-face {
-        font-family: 'Inter';
+        font-family: 'Nunito Sans';
         font-style:  normal;
         font-weight: bold;
         src: url(data:font/woff2;charset=utf-8;base64,${bold}) format('woff2');
     }
 
     @font-face {
-        font-family: 'Vera';
+        font-family: 'Nunito Sans';
         font-style: normal;
-        font-weight: normal;
+        font-weight: 700;
         src: url(data:font/woff2;charset=utf-8;base64,${mono})  format("woff2");
       }
 
     body {
         background: ${background};
-        background-image: radial-gradient(circle at 25px 25px, ${radial} 2%, transparent 0%), radial-gradient(circle at 75px 75px, ${radial} 2%, transparent 0%);
         background-size: 100px 100px;
         height: 100vh;
         display: flex;
